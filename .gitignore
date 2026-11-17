@@ -1,0 +1,7 @@
+# local settings with the own instance ID
+aws-vm.env
+
+# IDE and local tool settings
+.idea/
+.claude/
+.mcp.json

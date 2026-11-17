@@ -1,0 +1,10 @@
+# Add to ~/.ssh/config on your own computer
+Host aws-eda
+    # instance ID instead of an IP, it never changes
+    HostName i-0123456789abcdef0
+    User ubuntu
+    IdentityFile ~/.ssh/aws-eda
+    # SSH through AWS Session Manager, no open port on the VM
+    ProxyCommand aws ssm start-session --region eu-central-1 --target %h --document-name AWS-StartSSHSession --parameters portNumber=%p
+    # desktop in the browser at http://localhost:8080
+    LocalForward 8080 localhost:8080
